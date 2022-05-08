@@ -1,0 +1,5 @@
+ref_gff : "/home/Genome/ucsc.hg38.symbol.gff"
+ref_gtf : "/home/Genome/ucsc.hg38.symbol.chr22.gtf"
+nomenclature : ""
+StringTie_stranded_library : "--fr"
+FIN
