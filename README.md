@@ -7,7 +7,7 @@ Il a été produit pour le Projet de Programmation 2022, dans le cadre du Master
 ## Préambule
 Ces pipelines nécessitent l'installation de Docker.
 
-Certaines données nécessaires à l'exécution sont confidentielles et ne peuvent donc pas être fournies. Des données libres d'accès sont néanmoins accessibles en ligne, et devraient 
+Certaines données nécessaires à l'exécution sont confidentielles et ne peuvent donc pas être fournies. Des données libres d'accès sont néanmoins accessibles en ligne, et devraient pouvoir être intégrées aux pipelines.
 
 ## Utilisation du pipeline expression
 Les commandes à exécuter dans le terminal sont dans le fichier *cmd_expression.sh*.
