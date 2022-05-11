@@ -9,6 +9,13 @@ Ces pipelines nécessitent l'installation de Docker.
 
 Certaines données nécessaires à l'exécution sont confidentielles et ne peuvent donc pas être fournies. Des données libres d'accès sont néanmoins accessibles en ligne, et devraient pouvoir être intégrées aux pipelines.
 
+## Utilisation du pipelina rnaSeq
+Les commandes à exécuter dans le terminal sont dans le fichier *cmd_rnaseq.sh*.
+
+Ce code nous a été fourni par nos clients et est mis à disposition ici avec leur autorisation. La seule modification que nous avons apportée est la suppression de l'étape MarkDuplicates dans le fichier *pre_processing.smk*.
+
+Les fichiers nécessaires à l'exécution ne sont pas fournis : un génome de référence indexé, des FASTQ, des BED, des SNP. Sont inclus un formulaire d'informations, pour deux patients M3 et F3, et le fichier de configuration.
+
 ## Utilisation du pipeline expression
 Les commandes à exécuter dans le terminal sont dans le fichier *cmd_expression.sh*.
 
