@@ -1,0 +1,79 @@
+ref : /home/Genome/hg38diag_25chrom.fasta
+known : /home/SNP/snp.vcf.gz
+nomenclature : ""
+path_aligner : "/home/Rules/Mapping/STAR/Snakefile"
+path_variant_caller : ["/home/VariantCalling/Snakefile"]
+Sequencing_kit : illumina
+TrimmomaticFirstBase_phred : [ -phred33 ]
+TrimmomaticFirstBase_parameters : ["HEADCROP:3"]
+TrimmomaticFirstBase_threads : 1
+TrimmomaticIllumina_phred : [ -phred33 ]
+TrimmomaticIllumina_parameters : ["HEADCROP:1"]
+TrimmomaticIllumina_threads : 1
+TrimmomaticTakara_phred : [ -phred33 ]
+TrimmomaticTakara_parameters : ["HEADCROP:3"]
+TrimmomaticTakara_threads : 1
+FASTQC_parameters : ""
+Trimmomatic_phred : [ -phred33 ]
+Trimmomatic_parameters : ["TRAILING:20", "LEADING:20"]
+Trimmomatic_threads : 1
+Sickle_quality : "sanger"
+Sickle_parameters : "-q 30 -l 30"
+Sickle_threads : 2
+FASTQC-AT_parameters : ""
+FastQ_Screen_conf : ""
+FastQ_Screen_subset : 100000
+FastQ_Screen_aligner : "bowtie2"
+FASTQ-SCREEN_threads : 8
+Samtools-VIEW_parameters : -bhS
+SortSam_order : coordinate
+SortSam_extra : VALIDATION_STRINGENCY=LENIENT
+Qualimap_AS_parameters : "-gd HUMAN --java-mem-size=6G"
+Samtools-VIEW-Filtering_parameters : "-bh -q 30"
+MarkDuplicates_parameters : REMOVE_DUPLICATES=true VALIDATION_STRINGENCY=LENIENT 
+SplitNCIGARreads_parameters : ""
+SplitNCIGARreads_java_options : ""
+BQSR_parameters : ""
+BQSR_java_options : ""
+Samtools-INDEX_parameters : ""
+Samtools-VIEW2_parameters : -f 4
+Qualimap_AfterRMDup : "-s -pe"
+Qualimap_AfterRecalibration : "-s -pe"
+bait_intervals : "/home/Bed/roche_capture_targets.interval_list"
+target_intervals : "/home/Bed/roche_primary_targets_improved.interval_list"
+PicardsHSMetrics_parameters : ""
+PicardHSMetrics_metrics_path : "/home/tmp/metrics/"
+PicardHSMetrics_histogram_path : "/home/tmp/histogramme/"
+PicardHSMetrics_histogram_final : "/home/OutputFiles/QC/9-PicardHSMetrics/"
+STAR
+STAR_index : /home/Genome/hg38diag_25chrom/
+STAR_parameters : ""
+STAR_threads : 8
+HaplotypeCaller
+HaplotypeCaller_parameters : ""
+HaplotypeCaller_java_options : "-Xmx5G"
+GenomicsDB_parameters : "--batch-size 3"
+GenomicsDB_java_options : "-Xms15G"
+SelectVariants_parameters : ""
+SelectVariants_java_options : "-Xms5G"
+SelectVariants_threads : 3
+BCFToolsSelectVariants_threads : 10
+IndexFeatureFileSV_parameters : ""
+GenotypeGVCFs_parameters : ""
+GenotypeGVCFs_java_options : "-Xms5G"
+GenotypeGVCFs_threads : 3
+BCFToolsGenotype_threads : 10
+IndexFeatureFileGenotype_parameters : ""
+genome_version : hg38
+VCFTools_parameters : "--bed /home/Bed/KAPA_New_Exome_primary_targets_pre-release_improved.bed"
+IndexFeatureFile_parameters : ""
+known_index : "/home/SNP/snp.vcf.gz.tbi"
+VariantFiltration_filters : {"depth": "DP < 5", "frequence" : "AP / DP < 0.2", "quality" : "GQ < 30"}
+VariantFiltration_parameters : ""
+VariantFiltration_java_options : "-Xms15G -XX:+UseParallelGC -XX:ParallelGCThreads=3"
+VariantRecalibrator_mode : "SNP"
+VariantRecalibrator_resources : {"hapmap": {"known": False, "training": True, "truth": True, "prior": 15.0}, "omni":   {"known": False, "training": True, "truth": False, "prior": 12.0},"g1k":   {"known": False, "training": True, "truth": False, "prior": 10.0},"dbsnp":  {"known": True, "training": False, "truth": False, "prior": 2.0}}
+VariantRecalibrator_annotation : ["QD"]
+VariantRecalibrator_parameters : "--max-gaussians 4"
+VariantRecalibrator_java_opts : "-Xms16G -XX:+UseParalleleGC -XX:ParallelGCThreads=3"
+FIN

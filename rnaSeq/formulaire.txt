@@ -1,0 +1,3 @@
+ID	sexe	atteint	ID famille	Lien de parente
+M3	M	non	M3	Fils
+F3	F	non	F3	Fille
